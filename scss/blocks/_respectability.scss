@@ -1,0 +1,225 @@
+.respectability {
+  margin: 0 0 120px 0;
+  position: relative;
+  overflow: hidden;
+
+  @include vp-767 {
+    margin: 0 0 50px 0;
+  }
+
+  &__decor {
+    position: absolute;
+    right: 0;
+    top: -360px;
+    z-index: -1;
+    pointer-events: none;
+
+    @include vp-767 {
+      display: none;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    max-width: 654px;
+    margin: 0 auto 36px;
+    text-align: center;
+    font-size: 70px;
+    line-height: 1.1;
+    letter-spacing: -0.035em;
+    color: $color-ottoman;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-family: $ff-secondary;
+
+    @include vp-1023 {
+      max-width: unset;
+      font-size: 55px;
+    }
+
+    @include vp-767 {
+      font-size: 36px;
+      margin: 0 0 32px 0;
+    }
+  }
+
+  &__description {
+    max-width: 953px;
+    color: $color-white;
+    font-size: 28px;
+    line-height: 1.5;
+    text-transform: uppercase;
+    margin: 0 0 75px 0;
+    text-align: center;
+
+    @include vp-1023 {
+      font-size: 22px;
+      max-width: unset;
+      margin: 0;
+      padding: 0 0 40px 0;
+    }
+
+    @include vp-767 {
+      font-size: 18px;
+      padding: 0 0 30px 0;
+      text-align: left;
+    }
+  }
+
+  &__video-box {
+    position: relative;
+    margin: 0 0 50px 0;
+    min-width: 1280px;
+    min-height: 670px;
+
+    @include vp-1023 {
+      margin: 0 -20px 30px;
+      min-height: 265px;
+    }
+  }
+
+  &__video {
+    height: 670px;
+    width: 100%;
+    object-fit: cover;
+    display: flex;
+
+    @include vp-1023 {
+      height: 400px;
+    }
+
+    @include vp-767 {
+      height: 265px;
+    }
+  }
+
+  &__video-play {
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba($color-grey, 0.8);
+    border-radius: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: 244px;
+    gap: 16px;
+    color: $color-white;
+    font-size: 18px;
+    line-height: 1.35;
+    border: 2px solid transparent;
+    transition: transform $transition-300;
+
+    &:hover,
+    &:focus-visible {
+      transform: translate(-50%, -50%) scale(1.2);
+      border-color: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3),
+        0 0 30px rgba(255, 255, 255, 0.3);
+      background-color: rgba($color-grey, 0.9);
+    }
+
+    @include vp-1023 {
+      font-size: 16px;
+      padding: 15px;
+      width: 210px;
+    }
+
+    @include vp-767 {
+      font-size: 12px;
+      line-height: 1;
+      gap: 10px;
+      width: 197px;
+      padding: 16px;
+    }
+  }
+
+  &__video-icon {
+    @include vp-767 {
+      width: 16px;
+      height: 19px;
+    }
+  }
+
+  &__subtitle {
+    font-size: 30px;
+    line-height: 36px;
+    color: $color-white;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0 0 50px 0;
+
+    @include vp-1023 {
+      font-size: 26px;
+      line-height: 30px;
+      margin: 0 0 25px 0;
+    }
+
+    @include vp-767 {
+      font-size: 18px;
+      line-height: 1.35;
+      margin: 0 0 30px 0;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 408px));
+    gap: 28px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+
+    @include vp-1023 {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 20px;
+      width: calc(100% + 60px);
+      overflow-x: auto;
+      overflow-y: hidden;
+      margin: 0 -30px;
+      padding: 0 30px;
+
+      @include vp-767 {
+        margin: 0 -20px;
+        padding: 0 20px;
+        gap: 10px;
+        width: calc(100% + 40px);
+      }
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+
+  &__item {
+    max-width: 408px;
+    width: 100%;
+    margin: 0;
+
+    @include vp-1023 {
+      width: 320px;
+      flex: 0 0 auto;
+      min-width: 320px;
+      max-width: none;
+    }
+
+    @include vp-767 {
+      width: 320px;
+      flex: 0 0 320px;
+      min-width: auto;
+    }
+  }
+}
